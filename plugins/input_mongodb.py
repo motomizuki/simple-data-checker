@@ -1,8 +1,29 @@
 import pymongo
 from .input_base import InputPlugin
+import datetime
 
 
 class InputMongodb(InputPlugin):
+    def parse_config(self, config: dict) -> dict:
+        if "time_condition" in config:
+            condition = config["time_condition"]
+            lt = datetime.datetime.now()
+            gte = lt - datetime.timedelta(**condition["duration"])
+            if condition["format"] == "unix_timestamp":
+                between = {
+                    "$gte": gte.timestamp(),
+                    "$lt": lt.timestamp(),
+                }
+            else:
+                between = {
+                    "$gte": gte,
+                    "$lt": lt
+                }
+            c = dict()
+            c[condition["field"]] = between
+            config["conditions"] = {**config.get("conditions", {}), **c}
+            del config["time_condition"]
+        return config
     
     def init_plugin(self, url: str, collection: str, conditions: dict):
 
