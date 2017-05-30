@@ -1,13 +1,19 @@
-import yaml
 import importlib
 
-from executor import Executor
+import yaml
+import sys
+from .executor import Executor
 
-template = "plugins.{type_}_{name}"
+template = "..plugins.{type_}_{name}"
 
 
 def get_plugin_class(type_, name):
-    _module = importlib.import_module(template.format(type_=type_, name=name))
+    try:
+        # check plugin that installed via pip
+        _module = importlib.import_module("{type_}_{name}".format(type_=type_, name=name))
+    except:
+        # check default plugin
+        _module = importlib.import_module(template.format(type_=type_, name=name), package=__name__)
     return getattr(_module, "{}{}".format(type_.title(), name.title()))
 
 

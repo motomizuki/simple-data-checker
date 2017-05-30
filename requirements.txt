@@ -1,3 +1,5 @@
 pyyaml
 click
 requests
+pytz
+rethinkdb

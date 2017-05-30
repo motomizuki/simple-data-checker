@@ -1,6 +1,6 @@
-from plugins.checker_base import CheckerPlugin
-from plugins.input_base import InputPlugin
-from plugins.output_base import OutputPlugin
+from .plugins.checker_base import CheckerPlugin
+from .plugins.input_base import InputPlugin
+from .plugins.output_base import OutputPlugin
 
 
 class Executor:

@@ -1,4 +1,5 @@
 import csv
+
 from .input_base import InputPlugin
 
 
