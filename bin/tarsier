@@ -4,8 +4,8 @@
 from __future__ import (absolute_import, division, print_function)
 
 import click
-
-from lib.tarsier.builder import Builder
+__requires__ = ["tarsier"]
+from tarsier.builder import Builder
 
 
 @click.group(invoke_without_command=True)

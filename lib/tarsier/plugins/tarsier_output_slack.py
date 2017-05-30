@@ -6,7 +6,7 @@ from .tarsier_output_base import TarsierOutputPlugin
 
 
 class TarsierOutputSlack(TarsierOutputPlugin):
-    def init_plugin(self, webhook_url: str, channel: str, text=""):
+    def init_plugin(self, webhook_url: str, channel="#random", text=""):
         self._webhook_url = webhook_url
         self._text = text
         self._channel = channel
