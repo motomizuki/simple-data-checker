@@ -5,7 +5,7 @@ from __future__ import (absolute_import, division, print_function)
 
 import click
 
-from lib.simple_data_checker.builder import Builder
+from lib.tarsier.builder import Builder
 
 
 @click.group(invoke_without_command=True)
