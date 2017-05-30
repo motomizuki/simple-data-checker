@@ -2,10 +2,10 @@ import json
 
 import requests
 
-from .output_base import OutputPlugin
+from .tarsier_output_base import TarsierOutputPlugin
 
 
-class OutputSlack(OutputPlugin):
+class TarsierOutputSlack(TarsierOutputPlugin):
     def init_plugin(self, webhook_url: str, channel: str, text=""):
         self._webhook_url = webhook_url
         self._text = text

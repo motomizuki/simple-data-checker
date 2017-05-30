@@ -3,7 +3,7 @@ from typing import Union, List, Any
 
 import requests
 
-from .input_base import InputPlugin
+from .tarsier_input_base import TarsierInputPlugin
 
 
 def dict2list(d: Union[dict, str]):
@@ -24,7 +24,7 @@ def get_nest(d: dict, k: List[str]) -> Any:
     return d
 
 
-class InputWebapi(InputPlugin):
+class TarsierInputWebapi(TarsierInputPlugin):
     def parse_config(self, config: dict) -> dict:
         config["method"] = config.get("method", "get").lower()
         config["field"] = dict2list(config["field"])

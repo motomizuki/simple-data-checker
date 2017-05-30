@@ -1,7 +1,7 @@
-from .checker_base import CheckerPlugin
+from .tarsier_checker_base import TarsierCheckerPlugin
 
 
-class CheckerThreshold(CheckerPlugin):
+class TarsierCheckerThreshold(TarsierCheckerPlugin):
     def init_plugin(self, field, lower=None, upper=None):
         if lower is None and upper is None:
             raise ValueError("Either lower or upper is necessary")

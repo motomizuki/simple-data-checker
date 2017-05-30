@@ -3,11 +3,11 @@ import datetime
 import pytz
 import rethinkdb as r
 
-from .input_base import InputPlugin
+from .tarsier_input_base import TarsierInputPlugin
 
 
 
-class InputRethinkdb(InputPlugin):
+class TarsierInputRethinkdb(TarsierInputPlugin):
     def init_plugin(self, table, time_condition, host="127.0.0.1", port=28015, db="test", user="admin", password="", timeout=20, ssl=[]):
         self._conn = r.connect(host=host, port=port, db=db, user=user, password=password, timeout=timeout, ssl=ssl)
         self._time_condition = time_condition
