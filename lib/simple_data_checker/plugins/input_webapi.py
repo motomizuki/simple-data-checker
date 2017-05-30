@@ -1,7 +1,9 @@
-from .input_base import InputPlugin
-import requests
 import json
 from typing import Union, List, Any
+
+import requests
+
+from .input_base import InputPlugin
 
 
 def dict2list(d: Union[dict, str]):

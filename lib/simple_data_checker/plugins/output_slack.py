@@ -1,6 +1,8 @@
-from .output_base import OutputPlugin
-import requests
 import json
+
+import requests
+
+from .output_base import OutputPlugin
 
 
 class OutputSlack(OutputPlugin):

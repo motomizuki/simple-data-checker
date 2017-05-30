@@ -1,6 +1,9 @@
-import pymongo
-from .input_base import InputPlugin
 import datetime
+
+import pymongo
+
+from .input_base import InputPlugin
+
 
 
 class InputMongodb(InputPlugin):

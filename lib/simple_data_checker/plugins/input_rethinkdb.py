@@ -1,7 +1,10 @@
-import rethinkdb as r
-from .input_base import InputPlugin
 import datetime
+
 import pytz
+import rethinkdb as r
+
+from .input_base import InputPlugin
+
 
 
 class InputRethinkdb(InputPlugin):
