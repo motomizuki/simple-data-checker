@@ -15,14 +15,14 @@ install_requires = [
 ]
 
 setup(
-    name='simple_data_checker',
+    name='tarsier',
     version="0.1.0",
     package_dir={'': 'lib'},
     packages=find_packages('lib'),
     author="Hiroki Mizumoto",
     author_email="shuibenhonggui@gmail.com",
-    url="https://github.com/motomizuki/simple-data-checker",
-    description="Simple data checker",
+    url="https://github.com/motomizuki/tarsier",
+    description="Tarsier is a simple data checker",
     license="MIT License",
     install_requires=install_requires,
     classifiers=[
@@ -30,6 +30,6 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     scripts=[
-        'bin/simple-data-checker',
+        'bin/tarsier',
     ],
 )
