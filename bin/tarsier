@@ -15,7 +15,7 @@ def cli(ctx):
         print(ctx.get_help())
 
 
-@cli.command(help="run checker")
+@cli.command(help="<config.yml> # run a checker")
 @click.argument('f', type=click.Path(exists=True), required=True)
 def run(f):
     b = Builder(f)

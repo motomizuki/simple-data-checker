@@ -7,7 +7,6 @@ class TarsierInputPlugin(object):
         return self
 
     def init_plugin(self, **kwargs):
-        print("parent")
         pass
 
     def parse_config(self, config: dict) -> dict:

@@ -8,10 +8,9 @@ try:
 except ImportError:
     sys.exit(1)
 
-install_requires = [
-    "click",
-    "pyyaml",
-]
+with open('requirements.txt') as requirements_file:
+    install_requirements = requirements_file.read().splitlines()
+
 
 setup(
     name='tarsier',
@@ -23,7 +22,7 @@ setup(
     url="https://github.com/motomizuki/tarsier",
     description="Tarsier is a simple data checker",
     license="MIT License",
-    install_requires=install_requires,
+    install_requires=install_requirements,
     classifiers=[
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
