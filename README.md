@@ -26,7 +26,7 @@ pip install tarsier-input-mongodb
 
 #### Preinstall plugins
 |category|type|name|description|
-|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|
 |input|csv|tarsier-input-csv|csv input plugin|
 |checker|always|tarsier-checker-always|checker plugin witch always returns true|
 |checker|threshold|tarsier-checker-threshold|checker plugin that checks upper and lower|
