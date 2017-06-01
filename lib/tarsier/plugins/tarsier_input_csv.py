@@ -1,9 +1,9 @@
 import csv
 
-from .input_base import InputPlugin
+from .tarsier_input_base import TarsierInputPlugin
 
 
-class InputCsv(InputPlugin):
+class TarsierInputCsv(TarsierInputPlugin):
     def init_plugin(self, path: str, delimiter=",", encoding='utf-8', fieldnames=None):
 
         if path is None or type(path) != str:

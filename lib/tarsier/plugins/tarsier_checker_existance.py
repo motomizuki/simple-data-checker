@@ -1,11 +1,11 @@
-from .checker_base import CheckerPlugin
+from .tarsier_checker_base import TarsierCheckerPlugin
 
 
 def str2bool(s):
     return s.lower() in ['true', 'yes', 'y', 't', '1']
 
 
-class CheckerExistance(CheckerPlugin):
+class TarsierCheckerExistance(TarsierCheckerPlugin):
     def init_plugin(self, filter=None, filter_condition="all", exist=True):
         self._filter = filter
         self._filter_condition = filter_condition
