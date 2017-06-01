@@ -1,5 +1,11 @@
+#! /usr/bin/env python
+
+
+from __future__ import (absolute_import, division, print_function)
+
 import click
-from builder import Builder
+__requires__ = ["tarsier"]
+from tarsier.builder import Builder
 
 
 @click.group(invoke_without_command=True)
@@ -9,7 +15,7 @@ def cli(ctx):
         print(ctx.get_help())
 
 
-@cli.command(help="run checker")
+@cli.command(help="<config.yml> # run a checker")
 @click.argument('f', type=click.Path(exists=True), required=True)
 def run(f):
     b = Builder(f)

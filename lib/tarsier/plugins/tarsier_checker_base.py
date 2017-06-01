@@ -1,4 +1,4 @@
-class OutputPlugin(object):
+class TarsierCheckerPlugin(object):
     def __init__(self, config):
         self.__config = config
 
@@ -12,5 +12,6 @@ class OutputPlugin(object):
     def init_plugin(self, **kwargs):
         pass
 
-    def publish(self, params: dict):
-        pass
+    def check(self, data) -> [bool, dict]:
+        return True, {"message": "", "matched_event": {}}
+

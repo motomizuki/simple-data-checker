@@ -1,14 +1,19 @@
-import yaml
 import importlib
+import yaml
+from .executor import Executor
 
-from executor import Executor
-
-template = "plugins.{type_}_{name}"
+template = "..plugins.tarsier_{type_}_{name}"
 
 
 def get_plugin_class(type_, name):
-    _module = importlib.import_module(template.format(type_=type_, name=name))
-    return getattr(_module, "{}{}".format(type_.title(), name.title()))
+    try:
+        # check plugin that installed via pip
+        plugin_name = "tarsier_{type_}_{name}".format(type_=type_, name=name)
+        _module = importlib.import_module(plugin_name, package=plugin_name)
+    except:
+        # check default plugin
+        _module = importlib.import_module(template.format(type_=type_, name=name), package=__name__)
+    return getattr(_module, "Tarsier{}{}".format(type_.title(), name.title()))
 
 
 class Builder:
