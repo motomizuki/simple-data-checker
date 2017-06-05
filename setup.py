@@ -14,7 +14,7 @@ with open('requirements.txt') as requirements_file:
 
 setup(
     name='tarsier',
-    version="0.1.1",
+    version="0.2.0",
     package_dir={'': 'lib'},
     packages=find_packages('lib'),
     author="Hiroki Mizumoto",

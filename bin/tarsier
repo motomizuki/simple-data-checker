@@ -6,6 +6,7 @@ from __future__ import (absolute_import, division, print_function)
 import click
 __requires__ = ["tarsier"]
 from tarsier.builder import Builder
+from tarsier.plugin_generator import PluginGenerator
 
 
 @click.group(invoke_without_command=True)
@@ -21,6 +22,14 @@ def run(f):
     b = Builder(f)
     e = b.build()
     e.exec()
+
+
+@cli.command(help="<category> <type> # create new plugin")
+@click.argument('category', type=str, required=True)
+@click.argument('type', type=str, required=True)
+def new(category, type):
+    g = PluginGenerator()
+    g.generate(category, type)
 
 if __name__ == "__main__":
     cli()
